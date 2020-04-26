@@ -1,0 +1,223 @@
+/* Setting default margin and padding to webpage*/
+*{
+    margin:0;
+    padding: 0;
+}
+
+/* Setting a background color to webpage*/
+
+body{
+    background-color:rgb(9, 26, 36);
+}
+
+/*-------Header Section styling starts here-----------------*/
+/* This a header section which can be called as nav section 
+of the page where I have given a heading*/
+
+header{
+    width: 100vw;
+    height: 10vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgb(0,0,25),rgb(0,0,60));
+}
+
+/*Giving a color and size to the text of heading*/
+.heading h3{
+    color:whitesmoke;
+    font-size: 2em;
+}
+/*-------Header Section styling ends here-----------------*/
+/* creating another section in a webpage to perform the task*/
+.outline{
+    width: auto;
+    height:auto;
+    display: grid;
+    justify-content: center;
+    align-items: center;    
+}
+
+/*Making a box like structure and dividing the structure 
+into three parts */
+/*------------------------Main Box ---------------------*/
+.divider{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width:35vw;
+    height:75vh;  
+    border:2.5px solid rgb(14, 13, 13); 
+    margin-top:2em; 
+    grid-template-rows: 15% 50% auto;
+    grid-row-gap: 3px;
+    box-shadow: 0 2px 2px 0 rgb(0,0,25);
+}
+/*------------------End of Main Box ---------------------*/
+
+/*--------- First Row or first part of the structure which contains
+the heading of the question*/
+
+/*--------First Section Starts here ----------------------*/
+/*styling the content of the first row of the box*/
+.testContent{
+    width:35vw;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(134, 148, 153);
+    font-size: 30px;
+    background-color: rgb(0,0,25);
+}
+
+/*--------First Section Ends here ----------------------*/
+
+/*This the second section of the row which contains the desired 
+functionality to performed for the test.*/
+
+/*------------Second Section Starts Here ------------------*/
+
+/*styling the second row of the box*/
+.testDemo{
+    width:35vw;
+    height:100%;
+    background-color: aliceblue;
+}
+/* this section contains the css of the desired task*/
+
+.container{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-color:yellow;
+}
+
+.container h4{
+    color:black;
+    margin:3px;
+    font-size: 35px;
+    position: relative;
+    z-index: 2;
+    color: brown;
+}
+
+.checkboxContainer{
+    display: inline-block;
+    position: relative;
+}
+
+/*hiding the original checkbox and styling it below*/
+.checkboxContainer input{
+    visibility: hidden;
+     position: absolute;
+     z-index: 2;
+}
+
+/*making a box which will have a circular switch in it*/
+.checkboxContainer label{
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s ease-out;
+    width: 65px;
+    height: 35px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #aaa;
+    z-index: 2;
+
+}
+
+/*css styling for the circlular button inside the box*/
+.checkboxContainer label::after{
+    content: '';
+    position: absolute;
+    transform: translateX(0);
+    transition: transform 0.3s linear;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    top:1.5px;
+    left:2px;
+}
+
+/*active : helps me to style the container that I have created 
+with yellow background to yellow green providing a transition 
+effect on it*/
+
+.active {
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(calc(-50% - 10px), calc(-50% - 2px)) scale(0);
+	transition: transform 0.6s ease-out;
+	width: 30px;
+	height: 30px;
+	z-index: 1;
+}
+
+
+.checkboxContainer input:checked + label::after {
+	transform: translateX(calc(100% + 0.5px));
+}
+
+/*when the swtiched is clicked the background color of the
+container changes by a circular effect*/
+.checkboxContainer input:checked + label + .active{
+    transform: translate(-50%,-50%) scale(19);
+}
+
+/*used to change the color of the container when clicked on 
+switch from yellow to yellowgreen*/
+.checkboxContainer  .active,
+.checkboxContainer input:checked + label {
+	background-color: yellowgreen;
+}
+
+/*---------------End of Second Section --------------*/
+
+/* Dividing the third section of the row in to two parts 
+where one part contains the image of CodingNinja and second part 
+contains the link to the source code*/
+
+/*------Third Section Strats here--------------------*/
+
+.testOptions{
+    width:35vw;
+    height:100%;
+    background-color: rgb(0,0,25);
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 2px;
+
+}
+
+.imgLogo {
+    width: auto;
+    height: auto;
+}
+
+.imgLogo img{
+    width: 15vw;
+    height: 26vh;
+}
+
+.otherContent{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.otherContent a{
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 30px;
+}
+/*---------End of Third Section-----------------*/
